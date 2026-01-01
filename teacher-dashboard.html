@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Teacher Dashboard</h1>
+        <p id="subtitle">Classes & Assignments</p>
+    </header>
+    <main class="dashboard-main">
+        <div class="dashboard-layout">
+            <div class="sidebar">
+                <div id="profile" class="profile-header">
+                    <img id="avatar" src="" alt="avatar" class="profile-avatar">
+                    <div class="profile-info">
+                        <h2 id="displayName"></h2>
+                        <div id="displayRole" style="color:#6c7880"></div>
+                    </div>
+                    <!-- Hamburger Menu -->
+                    <div class="profile-menu-btn" id="profileMenuBtn">☰</div>
+                    <div class="profile-menu-dropdown" id="profileMenuDropdown">
+                        <div class="menu-item" id="menuEditProfile">Edit Profile</div>
+                    </div>
+                </div>
+
+                <div id="profileEditCard" class="card" style="display:none;">
+                    <h3 style="margin-bottom:8px">Edit Profile</h3>
+                    <div class="control-group">
+                        <label>Name</label>
+                        <input id="editName" type="text" />
+                    </div>
+                    <div class="control-group" style="margin-top:10px;">
+                        <label>Profile picture</label>
+                        <input id="editPicFile" type="file" accept="image/*" />
+                    </div>
+                    <div id="profileMsg" style="margin-top:8px;color:#2e7d32;display:none"></div>
+                    <div style="display:flex;gap:10px;margin-top:10px;">
+                        <button id="saveProfile" class="btn-primary">Save Profile</button>
+                        <button id="cancelProfile" class="btn-danger">Cancel</button>
+                    </div>
+                </div>
+
+                <div id="teacherAttendanceCard" class="card">
+                    <h4 style="margin:0 0 8px 0">Your Attendance</h4>
+                    <div style="font-size:1.6rem;font-weight:700" id="teacherAttendancePercent">0%</div>
+                    <div id="teacherAttendanceMeta" style="margin-top:8px;color:#6c7880">No attendance records yet.
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <div class="card">
+                    <div class="controls-bar">
+                        <div class="control-group">
+                            <label>Select Class</label>
+                            <select id="classSelect"></select>
+                        </div>
+                        <div class="control-group">
+                            <label>Subject</label>
+                            <input id="subjectSelect" list="subjectList" placeholder="-- Select or type subject --" />
+                            <datalist id="subjectList"></datalist>
+                        </div>
+                        <div class="control-group">
+                            <label>Select Month</label>
+                            <select id="monthSelect">
+                                <option value="">-- Month --</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label>Select Day</label>
+                            <input id="dateInput" type="date" />
+                        </div>
+                        <div class="control-group" style="margin-left:auto; width:auto; flex-direction:row;">
+                            <button id="loadStudents" class="btn-success">Load Students</button>
+                        </div>
+                    </div>
+
+                    <div id="teacherMsg" style="margin-top:8px;color:#c0392b;display:none"></div>
+
+                    <div id="studentsArea" style="margin-top:12px;display:none">
+                        <h4>Students</h4>
+                        <div class="table-responsive">
+                            <table id="studentsTable">
+                                <thead>
+                                    <tr>
+                                        <th>Roll</th>
+                                        <th>Name</th>
+                                        <th>Attendance (Today)</th>
+                                        <th>Marks</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+
+                        <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;">
+                            <button id="saveAttendance" class="btn-primary">Save Attendance</button>
+                            <button id="saveMarks" class="btn-secondary">Save Marks</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="logout-container">
+            <button id="logoutBtn" class="btn-danger">Logout</button>
+        </div>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <p id="subtitle">System Management</p>
+    </header>
+    <main class="dashboard-main">
+        <div class="dashboard-layout">
+            <div class="sidebar">
+                <div id="profile" class="profile-header">
+                    <img id="avatar" src="" alt="avatar" class="profile-avatar">
+                    <div class="profile-info">
+                        <h2 id="displayName"></h2>
+                        <div id="displayRole" style="color:#6c7880"></div>
+                    </div>
+                    <!-- Hamburger Menu -->
+                    <div class="profile-menu-btn" id="profileMenuBtn">☰</div>
+                    <div class="profile-menu-dropdown" id="profileMenuDropdown">
+                        <div class="menu-item" id="menuEditProfile">Edit Profile</div>
+                    </div>
+                </div>
+
+                <!-- Hidden Profile Edit Card -->
+                <div id="profileEditCard" class="card" style="display:none;">
+                    <h3 style="margin-bottom:8px">Edit Profile</h3>
+                    <div class="control-group">
+                        <label>Full Name</label>
+                        <input id="editName" type="text" placeholder="Enter Full Name" />
+                    </div>
+                    <div class="control-group" style="margin-top:10px;">
+                        <label>Profile Picture</label>
+                        <input id="editPicFile" type="file" accept="image/*" />
+                    </div>
+                    <div id="profileMsg" style="margin-top:8px;color:#2e7d32;display:none"></div>
+                    <div style="display:flex;gap:10px;margin-top:10px;">
+                        <button id="saveProfile" class="btn-primary">Save Profile</button>
+                        <button id="cancelProfile" class="btn-danger">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <div class="stats-grid">
+                    <div class="card">
+                        <h4>Students</h4>
+                        <div id="adminStudentsCount">0</div>
+                    </div>
+                    <div class="card">
+                        <h4>Teachers</h4>
+                        <div id="adminTeachersCount">0</div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top:12px;">
+                    <h3>Recent Activity Logs</h3>
+                    <div id="logsArea" style="max-height:260px;overflow:auto;font-size:0.95rem;color:#333"></div>
+                </div>
+
+
+
+                <div class="card" style="margin-top:12px;">
+                    <h3>Teacher Attendance (Admin)</h3>
+                    <div class="controls-bar">
+                        <div class="control-group">
+                            <label>Select Teacher</label>
+                            <select id="adminTeacherSelect"></select>
+                        </div>
+                        <div class="control-group">
+                            <label>Subject</label>
+                            <input id="adminSubjectInput" type="text" list="adminSubjectList"
+                                placeholder="Type Subject..." />
+                            <datalist id="adminSubjectList"></datalist>
+                        </div>
+                        <div class="control-group">
+                            <label>Select Month</label>
+                            <select id="adminMonthSelect">
+                                <option value="">-- Month --</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label>Select Day</label>
+                            <input id="adminDateInput" type="date" />
+                        </div>
+                        <div class="control-group">
+                            <label>Status</label>
+                            <select id="adminAttStatus">
+                                <option value="Present">Present</option>
+                                <option value="Absent">Absent</option>
+                            </select>
+                        </div>
+                        <div class="control-group" style="margin-left:auto; width:auto; flex-direction:row;">
+                            <!-- margin-left:auto auto-aligns on desktop flex, on mobile flex-col it wont matter much or needs adjust -->
+                            <button id="adminSaveTeacherAtt" class="btn-primary">Save Teacher Attendance</button>
+                        </div>
+                    </div>
+                    <div id="adminTeacherMsg" style="margin-top:8px;color:#c0392b;display:none"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="logout-container">
+            <button id="logoutBtn" class="btn-danger">Logout</button>
+        </div>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

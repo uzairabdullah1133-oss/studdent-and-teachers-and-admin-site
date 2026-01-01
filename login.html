@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login - Apexiums School management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Apexiums School management</h1>
+        <p id="subtitle">Secure role-based access</p>
+    </header>
+
+    <main class="login-panel-wrapper">
+        <section class="login-card">
+            <div id="roleIcon" class="role-icon student"><i class="fas fa-user-graduate"></i></div>
+            <h2 id="roleTitle">Login</h2>
+            <p id="roleDesc">Sign in to continue</p>
+
+            <form id="loginForm">
+                <div class="container">
+                    <label for="username"><b>Username or Email</b></label>
+                    <input id="username" type="text" placeholder="Enter username or email" required>
+
+                    <label for="password"><b>Password</b></label>
+                    <input id="password" type="password" placeholder="Enter password" required>
+
+                    <div id="error" style="color:#c0392b;margin:8px 0;display:none"></div>
+
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+
+            <p style="margin-top:12px;color:#6c7880;font-size:0.95rem">Not your role? <a href="index.html">Choose
+                    another role</a></p>
+
+        </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

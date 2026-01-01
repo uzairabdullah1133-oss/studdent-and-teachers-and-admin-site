@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Enroll - Apexiums School management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Enroll</h1>
+        <p id="subtitle">Create a new Student or Teacher account</p>
+    </header>
+
+    <main class="login-panel-wrapper">
+        <section class="login-card">
+            <h2>New User Enrollment</h2>
+            <form id="enrollForm">
+                <div class="container">
+                    <label for="fullName"><b>Full Name</b></label>
+                    <input id="fullName" type="text" placeholder="Full name" required>
+
+                    <label for="username"><b>Email / Username</b></label>
+                    <input id="username" type="text" placeholder="Email or username" required>
+
+                    <label for="password"><b>Password</b></label>
+                    <input id="password" type="password" placeholder="Choose a strong password" required>
+
+                    <label for="roleSelect"><b>Role</b></label>
+                    <select id="roleSelect">
+                        <option value="student">Student</option>
+                        <option value="teacher">Teacher</option>
+                    </select>
+
+                    <div id="studentFields">
+                        <label for="classSelect"><b>Class</b></label>
+                        <select id="classSelect"></select>
+                    </div>
+
+                    <div id="teacherFields" style="display:none">
+                        <label for="subjectInput"><b>Subject(s)</b></label>
+                        <input id="subjectInput" type="text" placeholder="Comma separated subjects (e.g. Math,Physics)">
+                    </div>
+
+                    <div id="enrollError" style="color:#c0392b;margin:8px 0;display:none"></div>
+                    <div id="enrollSuccess" style="color:#2e7d32;margin:8px 0;display:none"></div>
+
+                    <button type="submit">Enroll</button>
+                </div>
+            </form>
+
+            <p style="margin-top:12px;color:#6c7880;font-size:0.95rem">Already enrolled? <a id="toLogin"
+                    href="login.html">Login here</a></p>
+        </section>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Student Dashboard</h1>
+        <p id="subtitle">Overview</p>
+    </header>
+    <main class="dashboard-main">
+        <div class="dashboard-layout">
+            <div class="sidebar">
+                <div id="profile" class="profile-header">
+                    <img id="avatar" src="" alt="avatar" class="profile-avatar">
+                    <div class="profile-info">
+                        <h2 id="displayName"></h2>
+                        <div id="displayRole" style="color:#6c7880"></div>
+                    </div>
+                    <!-- Hamburger Menu -->
+                    <div class="profile-menu-btn" id="profileMenuBtn">☰</div>
+                    <div class="profile-menu-dropdown" id="profileMenuDropdown">
+                        <div class="menu-item" id="menuEditProfile">Edit Profile</div>
+                    </div>
+                </div>
+
+                <div id="profileEditCard" class="card" style="display:none;">
+                    <h3 style="margin:0 0 0.5rem 0">Edit Profile</h3>
+                    <div class="control-group">
+                        <label>Full name</label>
+                        <input id="editName" type="text" />
+                    </div>
+                    <div class="control-group" style="margin-top:10px;">
+                        <label>Profile picture URL/File</label>
+                        <input id="editPicFile" type="file" accept="image/*" />
+                    </div>
+                    <div id="profileMsg" style="margin-top:8px;color:#2e7d32;display:none"></div>
+                    <div style="display:flex;gap:10px;margin-top:10px;">
+                        <button id="saveProfile" class="btn-primary">Save Profile</button>
+                        <button id="cancelProfile" class="btn-danger">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-area">
+                <div class="card">
+                    <h3>Attendance Overview</h3>
+                    <div style="font-size:1.6rem;font-weight:700" id="attendancePercent">0%</div>
+                    <div id="attendanceMeta" style="margin-top:8px;color:#6c7880">No attendance data yet.</div>
+                </div>
+
+                <div class="card">
+                    <h3>Performance Summary</h3>
+                    <div id="performanceSummary">No performance data yet.</div>
+                </div>
+
+                <div class="card">
+                    <h3>Academic Results</h3>
+                    <div class="table-responsive">
+                        <table id="resultsTable">
+                            <thead>
+                                <tr style="text-align:left;color:#2c3e50;">
+                                    <th>Subject</th>
+                                    <th>Marks</th>
+                                    <th>Grade</th>
+                                    <th>Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="logout-container">
+            <button id="logoutBtn" class="btn-danger">Logout</button>
+        </div>
+    </main>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
